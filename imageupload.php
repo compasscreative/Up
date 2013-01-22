@@ -2,7 +2,7 @@
 
 	namespace Reinink\Upload_Handlers;
 
-	use Reinink\ImageMagick\ImageMagick;
+	use Reinink\ImageMagick;
 
 	class ImageUpload extends FileUpload
 	{
