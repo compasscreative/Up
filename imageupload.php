@@ -2,13 +2,13 @@
 /**
  * A class that makes image uploading a little easier.
  *
- * @package  Upload_Handlers
+ * @package  UploadHandlers
  * @version  1.0
  * @author   Jonathan Reinink <jonathan@reininks.com>
- * @link     https://github.com/reinink/Upload_Handlers
+ * @link     https://github.com/reinink/UploadHandlers
  */
 
-namespace Reinink\Upload_Handlers;
+namespace Reinink\UploadHandlers;
 
 use Reinink\ImageMagick;
 
@@ -62,7 +62,7 @@ class ImageUpload extends FileUpload
 		}
 		else
 		{
-			$this->error = 'Unable to convert file to an image.';
+			$this->error = 'Not a valid image file.';
 			return false;
 		}
 	}

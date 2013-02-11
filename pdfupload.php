@@ -2,13 +2,13 @@
 /**
  * A class that makes PDF uploading a little easier.
  *
- * @package  Upload_Handlers
+ * @package  UploadHandlers
  * @version  1.0
  * @author   Jonathan Reinink <jonathan@reininks.com>
- * @link     https://github.com/reinink/Upload_Handlers
+ * @link     https://github.com/reinink/UploadHandlers
  */
 
-namespace Reinink\Upload_Handlers;
+namespace Reinink\UploadHandlers;
 
 use \finfo;
 
@@ -38,7 +38,7 @@ class PDFUpload extends FileUpload
 		}
 		else
 		{
-			$this->error = 'File is not a PDF document.';
+			$this->error = 'Not a valid PDF file.';
 			return false;
 		}
 	}
