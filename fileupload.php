@@ -13,6 +13,13 @@ namespace Reinink\UploadHandlers;
 class FileUpload
 {
 	/**
+	 * The allowed file types.
+	 *
+	 * @var array
+	 */
+	public $file_types;
+
+	/**
 	 * The uploaded file path.
 	 *
 	 * @var string
@@ -32,6 +39,17 @@ class FileUpload
 	 * @var string
 	 */
 	public $error;
+
+	/**
+	 * Create a new FileUpload instance.
+	 *
+	 * @param	string	$file_types
+	 * @return	void
+	 */
+	public function __construct($file_types = NULL)
+	{
+		$this->file_types = $file_types;
+	}
 
 	/**
 	 * Validate the uploaded file.
@@ -67,6 +85,20 @@ class FileUpload
 		{
 			$this->error = 'The file is empty.';
 			return false;
+		}
+
+		// Validate file type
+		if (is_array($this->file_types))
+		{
+			// Get mime type from operating system
+			$type = exec('file -b --mime-type ' . $_FILES[$upload_name]['tmp_name']);
+
+			// Validate file type
+			if (empty($type) or !in_array($type, $this->file_types))
+			{
+				$this->error = 'Invalid file type.';
+				return false;
+			}
 		}
 
 		// Update object

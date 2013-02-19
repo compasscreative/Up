@@ -1,6 +1,6 @@
 <?php
 /**
- * A class that makes PDF uploading a little easier.
+ * A class that makes MP3 uploading a little easier.
  *
  * @package  UploadHandlers
  * @version  1.0
@@ -10,15 +10,15 @@
 
 namespace Reinink\UploadHandlers;
 
-class PDFUpload extends FileUpload
+class MP3Upload extends FileUpload
 {
 	/**
-	 * Create a new PDFUpload instance.
+	 * Create a new MP3Upload instance.
 	 *
 	 * @param	string	$file_types
 	 * @return	void
 	 */
-	public function __construct($file_types = array('application/pdf'))
+	public function __construct($file_types = array('audio/mpeg'))
 	{
 		$this->file_types = $file_types;
 	}
