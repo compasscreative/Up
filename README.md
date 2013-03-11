@@ -6,8 +6,7 @@ Up
 ```php
 <?php
 
-use Reinink\Magick\Magick;
-use Reinink\Up\PDFUpload;
+use Reinink\Up\FileUpload;
 
 // Create an file uploader
 $upload = new FileUpload();
@@ -56,7 +55,6 @@ $upload->save('destination.jpg');
 ```php
 <?php
 
-use Reinink\Magick\Magick;
 use Reinink\Up\PDFUpload;
 
 // Create an PDF uploader
