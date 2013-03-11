@@ -2,20 +2,20 @@
 /**
  * A class that makes image uploading a little easier.
  *
- * @package  UploadHandlers
+ * @package  Up
  * @version  1.0
  * @author   Jonathan Reinink <jonathan@reininks.com>
- * @link     https://github.com/reinink/UploadHandlers
+ * @link     https://github.com/reinink/Up
  */
 
-namespace Reinink\UploadHandlers;
+namespace Reinink\Up;
 
-use Reinink\ImageMagick;
+use Reinink\Magick\Magick;
 
 class ImageUpload extends FileUpload
 {
 	/**
-	 * The ImageMagick object.
+	 * The Magick object.
 	 *
 	 * @var object
 	 */
@@ -27,7 +27,7 @@ class ImageUpload extends FileUpload
 	 * @param	object	$im
 	 * @return	void
 	 */
-	public function __construct(ImageMagick $im)
+	public function __construct(Magick $im)
 	{
 		$this->im = $im;
 	}
@@ -46,7 +46,7 @@ class ImageUpload extends FileUpload
 			return false;
 		}
 
-		// Update ImageMagick object with file path
+		// Update Magick object with file path
 		$this->im->set_file_path($this->file_path);
 
 		// Validate that this is an image by converting it to a jpg

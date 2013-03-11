@@ -2,13 +2,13 @@
 /**
  * A class that makes PDF uploading a little easier.
  *
- * @package  UploadHandlers
+ * @package  Up
  * @version  1.0
  * @author   Jonathan Reinink <jonathan@reininks.com>
- * @link     https://github.com/reinink/UploadHandlers
+ * @link     https://github.com/reinink/Up
  */
 
-namespace Reinink\UploadHandlers;
+namespace Reinink\Up;
 
 class PDFUpload extends FileUpload
 {

@@ -2,13 +2,13 @@
 /**
  * A class that makes file uploading a little easier.
  *
- * @package  UploadHandlers
+ * @package  Up
  * @version  1.0
  * @author   Jonathan Reinink <jonathan@reininks.com>
- * @link     https://github.com/reinink/UploadHandlers
+ * @link     https://github.com/reinink/Up
  */
 
-namespace Reinink\UploadHandlers;
+namespace Reinink\Up;
 
 class FileUpload
 {
@@ -67,7 +67,7 @@ class FileUpload
 		}
 
 		// Verify this is a multipart request
-		if(!isset($_SERVER['CONTENT_TYPE']) or strpos(strtolower($_SERVER['CONTENT_TYPE']), 'multipart/') !== 0)
+		if (!isset($_SERVER['CONTENT_TYPE']) or strpos(strtolower($_SERVER['CONTENT_TYPE']), 'multipart/') !== 0)
 		{
 			$this->error = 'Not a valid multipart request.';
 			return false;
