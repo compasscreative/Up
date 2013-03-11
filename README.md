@@ -22,28 +22,6 @@ if (!$upload->validate('file'))
 $upload->save('destination.ext');
 ```
 
-## Upload an image
-
-```php
-<?php
-
-use Reinink\Magick\Magick;
-use Reinink\Up\ImageUpload;
-
-// Create an image uploader (requires Magick class)
-$upload = new ImageUpload(new Magick);
-
-// Validate uploaded file
-// "image" if the post filename
-if (!$upload->validate('image'))
-{
-	// Do something with $upload->error
-}
-
-// Save the file
-$upload->save('destination.jpg');
-```
-
 ## Upload an PDF document
 
 ```php
@@ -63,4 +41,28 @@ if (!$upload->validate('pdf'))
 
 // Save the file
 $upload->save('destination.pdf');
+```
+
+## Upload an image
+
+The `ImageUpload` class uses [ImageMagick](http://www.imagemagick.org/) for validation. Simply include an instance of the [Magick](https://github.com/reinink/Magick) class.
+
+```php
+<?php
+
+use Reinink\Magick\Magick;
+use Reinink\Up\ImageUpload;
+
+// Create an image uploader (requires Magick class)
+$upload = new ImageUpload(new Magick);
+
+// Validate uploaded file
+// "image" if the post filename
+if (!$upload->validate('image'))
+{
+	// Do something with $upload->error
+}
+
+// Save the file
+$upload->save('destination.jpg');
 ```
