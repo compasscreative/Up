@@ -22,7 +22,7 @@ if (!$upload->validate('file'))
 $upload->save('destination.ext');
 ```
 
-## Upload an PDF document
+## Upload a PDF document
 
 ```php
 <?php
